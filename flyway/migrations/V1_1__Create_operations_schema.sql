@@ -1,0 +1,13 @@
+CREATE SCHEMA operations;
+
+-- configure 'readonly' role access
+GRANT USAGE ON SCHEMA operations TO readonly;
+GRANT SELECT ON ALL TABLES IN SCHEMA operations TO readonly;
+ALTER DEFAULT PRIVILEGES IN SCHEMA operations GRANT SELECT ON TABLES TO readonly;
+
+-- configure 'readwrite' role access
+GRANT USAGE, CREATE ON SCHEMA operations TO readwrite;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA operations TO readwrite;
+ALTER DEFAULT PRIVILEGES IN SCHEMA operations GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO readwrite;
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA operations TO readwrite;
+ALTER DEFAULT PRIVILEGES IN SCHEMA operations GRANT USAGE ON SEQUENCES TO readwrite;

@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  jukenook_flyway:
+    container_name: jukenook_flyway
+    image: flyway/flyway:6-alpine
+    command: -url=jdbc:postgresql://jukenook_db/jukenook -connectRetries=60 -user=postgres -password=password info
+    volumes:
+      - ./migrations:/flyway/sql
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: jukenook_net
