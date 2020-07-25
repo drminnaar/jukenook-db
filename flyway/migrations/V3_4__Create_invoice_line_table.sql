@@ -18,6 +18,6 @@ CREATE INDEX "ifk_sales_invoiceline_invoiceid" ON sales.invoice_line ("invoice_i
 
 -- define track relationship
 ALTER TABLE sales.invoice_line ADD CONSTRAINT "fk_sales_invoiceline_trackid"
-    FOREIGN KEY ("track_id") REFERENCES catalog.track ("track_id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+    FOREIGN KEY ("track_id") REFERENCES music_catalog.track ("track_id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 CREATE INDEX "ifk_sales_invoiceline_trackid" ON sales.invoice_line ("track_id");

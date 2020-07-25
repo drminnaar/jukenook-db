@@ -1,5 +1,10 @@
 CREATE SCHEMA operations;
 
+-- configure 'admin' role access
+GRANT ALL PRIVILEGES ON SCHEMA operations TO admin;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA operations TO admin;
+ALTER DEFAULT PRIVILEGES IN SCHEMA operations GRANT ALL PRIVILEGES ON TABLES TO admin;
+
 -- configure 'readonly' role access
 GRANT USAGE ON SCHEMA operations TO readonly;
 GRANT SELECT ON ALL TABLES IN SCHEMA operations TO readonly;

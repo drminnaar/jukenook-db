@@ -1,5 +1,10 @@
 CREATE SCHEMA sales;
 
+-- configure 'admin' role access
+GRANT ALL PRIVILEGES ON SCHEMA sales TO admin;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA sales TO admin;
+ALTER DEFAULT PRIVILEGES IN SCHEMA sales GRANT ALL PRIVILEGES ON TABLES TO admin;
+
 -- configure 'readonly' role access
 GRANT USAGE ON SCHEMA sales TO readonly;
 GRANT SELECT ON ALL TABLES IN SCHEMA sales TO readonly;
