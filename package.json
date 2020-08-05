@@ -4,10 +4,10 @@
   "description": "Jukenook Db is a database management project that is used to manage database versioning, migration and infrastructural concerns",
   "scripts": {
     "dev-db:up": "docker-compose up -d",
-    "dev-db:down": "docker-compose down --volumes && docker-compose -f ./flyway/docker-compose-dev-flyway:info.yml -f ./flyway/docker-compose-dev-flyway:validate.yml -f ./flyway/docker-compose-dev-flyway:migrate.yml down",
-    "dev-db:migrate": "docker-compose -f ./flyway/docker-compose-dev-flyway:migrate.yml up",
-    "dev-db:info": "docker-compose -f ./flyway/docker-compose-dev-flyway:info.yml up",
-    "dev-db:validate": "docker-compose -f ./flyway/docker-compose-dev-flyway:validate.yml up",
+    "dev-db:down": "docker-compose down --volumes && docker-compose -f ./flyway/docker-compose-dev-flyway-info.yml -f ./flyway/docker-compose-dev-flyway-validate.yml -f ./flyway/docker-compose-dev-flyway-migrate.yml down",
+    "dev-db:migrate": "docker-compose -f ./flyway/docker-compose-dev-flyway-migrate.yml up",
+    "dev-db:info": "docker-compose -f ./flyway/docker-compose-dev-flyway-info.yml up",
+    "dev-db:validate": "docker-compose -f ./flyway/docker-compose-dev-flyway-validate.yml up",
     "start": "npm run dev-db:down && npm run dev-db:up"
   }
 }
